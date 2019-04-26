@@ -62,8 +62,8 @@ void EvtContext::loopIteration() {
 }
 
 void EvtContext::setupContext() {
-  if(data){
-    delete data;
+  if(static_cast<char*>(data)){
+    delete static_cast<char*>(data);
   }
   if(listeners) {
     for(int i = 0; i < listenerCount; i++) {
